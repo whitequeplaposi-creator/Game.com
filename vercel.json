@@ -5,10 +5,6 @@
   "framework": "nextjs",
   "outputDirectory": ".next",
   "regions": ["arn1"],
-  "env": {
-    "DATABASE_URL": "@database_url",
-    "TURSO_AUTH_TOKEN": "@turso_auth_token"
-  },
   "headers": [
     {
       "source": "/api/(.*)",
