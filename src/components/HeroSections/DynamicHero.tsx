@@ -16,51 +16,78 @@ interface HeroSlide {
   textColor: string;
 }
 
-const HERO_SLIDES: HeroSlide[] = [
-  {
-    id: 'summer-vibes',
-    title: 'ELEGANT KVÄLLSLOOK',
-    subtitle: '✦ Låt din stil tala för sig själv',
-    description: '',
-    ctaText: 'UTFORSKA >',
-    ctaLink: '/catalog?trend=summer-vibes',
-    backgroundImage: 'https://images.unsplash.com/photo-1523381210434-271e8be1f52b?w=1920&h=800&fit=crop',
-    textColor: '#ffffff'
-  },
-  {
-    id: 'new-collection',
-    title: 'NYA KOLLEKTIONEN',
-    subtitle: '✦ Upptäck säsongens hetaste trender',
-    description: '',
-    ctaText: 'SHOPPA NU >',
-    ctaLink: '/catalog?collection=new',
-    backgroundImage: 'https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=1920&h=800&fit=crop',
-    textColor: '#ffffff'
-  }
-];
-
 export default function DynamicHero() {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [heroSlides, setHeroSlides] = useState<HeroSlide[]>([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    async function fetchHeroData() {
+      try {
+        const res = await fetch('/api/hero-products');
+        const data = await res.json();
+        const products = data.products || [];
+        
+        // Skapa hero slides med riktiga produktbilder från databasen
+        const slides: HeroSlide[] = [
+          {
+            id: 'summer-vibes',
+            title: 'ELEGANT KVÄLLSLOOK',
+            subtitle: '✦ Låt din stil tala för sig själv',
+            description: '',
+            ctaText: 'UTFORSKA >',
+            ctaLink: '/catalog?trend=summer-vibes',
+            backgroundImage: products[0]?.image || '',
+            textColor: '#ffffff'
+          },
+          {
+            id: 'new-collection',
+            title: 'NYA KOLLEKTIONEN',
+            subtitle: '✦ Upptäck säsongens hetaste trender',
+            description: '',
+            ctaText: 'SHOPPA NU >',
+            ctaLink: '/catalog?collection=new',
+            backgroundImage: products[1]?.image || '',
+            textColor: '#ffffff'
+          }
+        ];
+        
+        setHeroSlides(slides);
+        setLoading(false);
+      } catch (error) {
+        console.error('Failed to fetch hero data:', error);
+        setLoading(false);
+      }
+    }
+    
+    fetchHeroData();
+  }, []);
+
+  useEffect(() => {
+    if (heroSlides.length === 0) return;
+    
     const interval = setInterval(() => {
-      setCurrentIndex((prev) => (prev + 1) % HERO_SLIDES.length);
+      setCurrentIndex((prev) => (prev + 1) % heroSlides.length);
     }, 5000);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [heroSlides.length]);
 
   const handleDotClick = (index: number) => {
     setCurrentIndex(index);
   };
 
   const handlePrevClick = () => {
-    setCurrentIndex((prev) => (prev - 1 + HERO_SLIDES.length) % HERO_SLIDES.length);
+    setCurrentIndex((prev) => (prev - 1 + heroSlides.length) % heroSlides.length);
   };
 
   const handleNextClick = () => {
-    setCurrentIndex((prev) => (prev + 1) % HERO_SLIDES.length);
+    setCurrentIndex((prev) => (prev + 1) % heroSlides.length);
   };
+
+  if (loading || heroSlides.length === 0) {
+    return <section className={styles.heroSection} style={{ minHeight: '500px' }} />;
+  }
 
   return (
     <section className={styles.heroSection}>
@@ -69,14 +96,14 @@ export default function DynamicHero() {
           className={styles.carouselTrack}
           style={{ transform: `translateX(-${currentIndex * 100}%)` }}
         >
-          {HERO_SLIDES.map((slide) => (
+          {heroSlides.map((slide) => (
             <div key={slide.id} className={styles.slide}>
               <div className={styles.imageWrapper}>
                 <Image
                   src={slide.backgroundImage}
                   alt={slide.title}
                   fill
-                  priority={slide.id === HERO_SLIDES[0].id}
+                  priority={slide.id === heroSlides[0].id}
                   className={styles.backgroundImage}
                   sizes="100vw"
                 />
@@ -117,7 +144,7 @@ export default function DynamicHero() {
         </button>
 
         <div className={styles.navigation}>
-          {HERO_SLIDES.map((slide, index) => (
+          {heroSlides.map((slide, index) => (
             <button
               key={slide.id}
               className={`${styles.dot} ${index === currentIndex ? styles.activeDot : ''}`}

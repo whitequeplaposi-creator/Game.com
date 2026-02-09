@@ -5,50 +5,96 @@ import Image from 'next/image';
 import Link from 'next/link';
 import styles from './SheinHero.module.css';
 
-const BANNERS = [
-    {
-        id: 1,
-        type: 'trends',
-        title: "VÅR- & SOMMARNYHETER",
-        hashtag: "#BeachVibe2026",
-        link: '/catalog?trend=beach-vibe',
-        backgroundColor: '#FFE5EC',
-        backgroundImage: 'https://images.unsplash.com/photo-1502716119720-b23a93e5fe1b?w=1200&h=800&fit=crop',
-        products: [
-            { id: 401, image: 'https://images.unsplash.com/photo-1543163521-1bf539c55dd2?w=400&h=500&fit=crop', price: '249' },
-            { id: 402, image: 'https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=400&h=500&fit=crop', price: '189' },
-            { id: 403, image: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=400&h=500&fit=crop', price: '329' },
-            { id: 404, image: 'https://images.unsplash.com/photo-1483985988355-763728e1935b?w=400&h=500&fit=crop', price: '275' }
-        ]
-    },
-    {
-        id: 2,
-        type: 'sale',
-        title: "MEGA REA - UPP TILL 80%",
-        subtitle: "Tidlösa favoriter till oslagbara priser",
-        cta: "FYNDA NU >",
-        link: '/catalog?category=Sale',
-        backgroundGradient: 'linear-gradient(135deg, #000000 0%, #ff0000 100%)',
-        products: [
-            { id: 101, image: 'https://images.unsplash.com/photo-1554412933-514a83d2f3c8?w=400&h=500&fit=crop', price: '99' },
-            { id: 102, image: 'https://images.unsplash.com/photo-1551488831-00ddcb6c6bd3?w=400&h=500&fit=crop', price: '129' },
-            { id: 103, image: 'https://images.unsplash.com/photo-1509631179647-0177331693ae?w=400&h=500&fit=crop', price: '145' }
-        ]
-    }
-];
+interface Product {
+    id: string;
+    image: string;
+    price: number;
+}
+
+interface Banner {
+    id: number;
+    type: string;
+    title: string;
+    hashtag?: string;
+    subtitle?: string;
+    cta?: string;
+    link: string;
+    backgroundColor?: string;
+    backgroundGradient?: string;
+    backgroundImage?: string;
+    products: Product[];
+}
 
 export default function SheinHero() {
     const [currentSlide, setCurrentSlide] = useState(0);
+    const [banners, setBanners] = useState<Banner[]>([]);
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        const timer = setInterval(() => {
-            setCurrentSlide((prev) => (prev + 1) % BANNERS.length);
-        }, 6000);
-        return () => clearInterval(timer);
+        async function fetchHeroData() {
+            try {
+                const res = await fetch('/api/hero-products');
+                const data = await res.json();
+                const products = data.products || [];
+                
+                // Skapa banners med riktiga produkter från databasen
+                const dynamicBanners: Banner[] = [
+                    {
+                        id: 1,
+                        type: 'trends',
+                        title: "VÅR- & SOMMARNYHETER",
+                        hashtag: "#BeachVibe2026",
+                        link: '/catalog?trend=beach-vibe',
+                        backgroundColor: '#FFE5EC',
+                        backgroundImage: products[0]?.image || '',
+                        products: products.slice(0, 4).map((p: any) => ({
+                            id: p.id,
+                            image: p.image,
+                            price: p.price
+                        }))
+                    },
+                    {
+                        id: 2,
+                        type: 'sale',
+                        title: "MEGA REA - UPP TILL 80%",
+                        subtitle: "Tidlösa favoriter till oslagbara priser",
+                        cta: "FYNDA NU >",
+                        link: '/catalog?category=Sale',
+                        backgroundGradient: 'linear-gradient(135deg, #000000 0%, #ff0000 100%)',
+                        products: products.slice(0, 3).map((p: any) => ({
+                            id: p.id,
+                            image: p.image,
+                            price: p.price
+                        }))
+                    }
+                ];
+                
+                setBanners(dynamicBanners);
+                setLoading(false);
+            } catch (error) {
+                console.error('Failed to fetch hero data:', error);
+                setLoading(false);
+            }
+        }
+        
+        fetchHeroData();
     }, []);
 
-    const nextSlide = () => setCurrentSlide((prev) => (prev + 1) % BANNERS.length);
-    const prevSlide = () => setCurrentSlide((prev) => (prev - 1 + BANNERS.length) % BANNERS.length);
+    useEffect(() => {
+        if (banners.length === 0) return;
+        
+        const timer = setInterval(() => {
+            setCurrentSlide((prev) => (prev + 1) % banners.length);
+        }, 6000);
+        return () => clearInterval(timer);
+    }, [banners.length]);
+
+    const nextSlide = () => setCurrentSlide((prev) => (prev + 1) % banners.length);
+    const prevSlide = () => setCurrentSlide((prev) => (prev - 1 + banners.length) % banners.length);
+
+    if (loading || banners.length === 0) {
+        return <div className={styles.heroContainer} style={{ minHeight: '500px' }} />;
+    }
 
     return (
         <div className={styles.heroContainer}>
@@ -60,7 +106,7 @@ export default function SheinHero() {
                     className={styles.carouselTrack}
                     style={{ transform: `translateX(-${currentSlide * 100}%)` }}
                 >
-                    {BANNERS.map((banner) => (
+                    {banners.map((banner) => (
                         <div key={banner.id} className={`${styles.slide} ${styles[banner.type + 'Slide']}`}>
                             <div className={styles.bannerBackground} style={{ backgroundColor: banner.backgroundColor, background: banner.backgroundGradient }}>
                                 {banner.backgroundImage && (
@@ -111,7 +157,7 @@ export default function SheinHero() {
                                                         className={styles.productImage}
                                                     />
                                                     <div className={styles.priceBadge}>
-                                                        {product.price}<span>kr</span>
+                                                        {Math.round(product.price)}<span>kr</span>
                                                     </div>
                                                 </div>
                                             </div>
@@ -127,7 +173,7 @@ export default function SheinHero() {
                 <button className={`${styles.navButton} ${styles.nextBtn}`} onClick={nextSlide}>›</button>
 
                 <div className={styles.dotsList}>
-                    {BANNERS.map((_, i) => (
+                    {banners.map((_, i) => (
                         <div
                             key={i}
                             className={`${styles.dot} ${currentSlide === i ? styles.activeDot : ''}`}
