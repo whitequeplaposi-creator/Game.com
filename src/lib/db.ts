@@ -1,4 +1,5 @@
 import { createClient } from '@libsql/client';
+import { calculatePrice } from './pricing';
 
 // Skapa Turso-databasklient
 export const db = createClient({
@@ -30,22 +31,27 @@ export interface DbProduct {
 export async function getProducts() {
   try {
     const result = await db.execute('SELECT * FROM products WHERE in_stock = 1 ORDER BY created_at DESC');
-    return result.rows.map(row => ({
-      id: String(row.id),
-      name: row.name as string,
-      price: Number(row.price),
-      originalPrice: row.original_price ? Number(row.original_price) : undefined,
-      description: row.description as string,
-      category: row.category as string,
-      image: row.image as string,
-      images: JSON.parse(row.images as string),
-      sizes: JSON.parse(row.sizes as string),
-      colors: JSON.parse(row.colors as string),
-      rating: Number(row.rating),
-      reviewCount: Number(row.review_count),
-      inStock: Boolean(row.in_stock),
-      isHot: Boolean(row.is_hot),
-    }));
+    return result.rows.map(row => {
+      const usdPrice = Number(row.price);
+      const usdOriginalPrice = row.original_price ? Number(row.original_price) : undefined;
+      
+      return {
+        id: String(row.id),
+        name: row.name as string,
+        price: calculatePrice(usdPrice),
+        originalPrice: usdOriginalPrice ? calculatePrice(usdOriginalPrice) : undefined,
+        description: row.description as string,
+        category: row.category as string,
+        image: row.image as string,
+        images: JSON.parse(row.images as string),
+        sizes: JSON.parse(row.sizes as string),
+        colors: JSON.parse(row.colors as string),
+        rating: Number(row.rating),
+        reviewCount: Number(row.review_count),
+        inStock: Boolean(row.in_stock),
+        isHot: Boolean(row.is_hot),
+      };
+    });
   } catch (error) {
     console.error('Fel vid hämtning av produkter:', error);
     return [];
@@ -63,11 +69,14 @@ export async function getProductById(id: string) {
     if (result.rows.length === 0) return null;
     
     const row = result.rows[0];
+    const usdPrice = Number(row.price);
+    const usdOriginalPrice = row.original_price ? Number(row.original_price) : undefined;
+    
     return {
       id: String(row.id),
       name: row.name as string,
-      price: Number(row.price),
-      originalPrice: row.original_price ? Number(row.original_price) : undefined,
+      price: calculatePrice(usdPrice),
+      originalPrice: usdOriginalPrice ? calculatePrice(usdOriginalPrice) : undefined,
       description: row.description as string,
       category: row.category as string,
       image: row.image as string,
@@ -93,22 +102,27 @@ export async function getProductsByCategory(category: string) {
       args: [category]
     });
     
-    return result.rows.map(row => ({
-      id: String(row.id),
-      name: row.name as string,
-      price: Number(row.price),
-      originalPrice: row.original_price ? Number(row.original_price) : undefined,
-      description: row.description as string,
-      category: row.category as string,
-      image: row.image as string,
-      images: JSON.parse(row.images as string),
-      sizes: JSON.parse(row.sizes as string),
-      colors: JSON.parse(row.colors as string),
-      rating: Number(row.rating),
-      reviewCount: Number(row.review_count),
-      inStock: Boolean(row.in_stock),
-      isHot: Boolean(row.is_hot),
-    }));
+    return result.rows.map(row => {
+      const usdPrice = Number(row.price);
+      const usdOriginalPrice = row.original_price ? Number(row.original_price) : undefined;
+      
+      return {
+        id: String(row.id),
+        name: row.name as string,
+        price: calculatePrice(usdPrice),
+        originalPrice: usdOriginalPrice ? calculatePrice(usdOriginalPrice) : undefined,
+        description: row.description as string,
+        category: row.category as string,
+        image: row.image as string,
+        images: JSON.parse(row.images as string),
+        sizes: JSON.parse(row.sizes as string),
+        colors: JSON.parse(row.colors as string),
+        rating: Number(row.rating),
+        reviewCount: Number(row.review_count),
+        inStock: Boolean(row.in_stock),
+        isHot: Boolean(row.is_hot),
+      };
+    });
   } catch (error) {
     console.error('Fel vid hämtning av produkter efter kategori:', error);
     return [];

@@ -1,11 +1,27 @@
 import ProductGrid from '@/components/ProductGrid/ProductGrid';
 import CategoryGrid from '@/components/CategoryGrid/CategoryGrid';
 import SheinHero from '@/components/Hero/SheinHero';
-import { products } from '@/data';
 import Link from 'next/link';
 import styles from './page.module.css';
 
-export default function Home() {
+async function getProducts() {
+  try {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3000'}/api/products`, {
+      cache: 'no-store'
+    });
+    if (!res.ok) return [];
+    const data = await res.json();
+    return data.products || [];
+  } catch (error) {
+    console.error('Failed to fetch products:', error);
+    return [];
+  }
+}
+
+export default async function Home() {
+  const products = await getProducts();
+  const trendingProducts = products.slice(0, 6);
+
   return (
     <div className={styles.page}>
       <SheinHero />
@@ -26,7 +42,7 @@ export default function Home() {
               Se alla trender ›
             </Link>
           </div>
-          <ProductGrid products={products.slice(0, 6)} />
+          <ProductGrid products={trendingProducts} />
         </div>
       </section>
 
