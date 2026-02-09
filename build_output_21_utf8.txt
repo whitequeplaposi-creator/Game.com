@@ -1,0 +1,129 @@
+﻿
+> shein-ecommerce@0.1.0 build
+> next build
+
+Ôû▓ Next.js 16.1.6 (Turbopack)
+- Environments: .env.local
+
+  Creating an optimized production build ...
+Ô£ô Compiled successfully in 5.6s
+  Running TypeScript ...
+  Collecting page data using 7 workers ...
+  Generating static pages using 7 workers (0/9) ...
+node.exe : Ô¿» useSea
+rchParams() should be
+ wrapped in a suspens
+e boundary at page "/
+catalog". Read more: 
+https://nextjs.org/do
+cs/messages/missing-s
+uspense-with-csr-bail
+out
+At line:1 char:1
++ & "C:\Program Files
+\nodejs/node.exe" "C:
+\Program Files\nodejs
+/node_mo ...
++ ~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~
+    + CategoryInfo   
+           : NotSpe  
+  cified: (Ô¿» use   
+ SearchPa...ith-c    
+sr-bailout:Strin    g
+) [], RemoteExc    ep
+tion
+    + FullyQualified 
+   ErrorId : Native  
+  CommandError
+ 
+    at Q (C:\Users\Lo
+kana Ngabu\Desktop\Ny
+ mapp\Apple.com\shein
+-ecommerce\.next\serv
+er\chunks\ssr\node_mo
+dules_next_920e7746._
+.js:2:2111)
+    at o (C:\Users\Lo
+kana Ngabu\Desktop\Ny
+ mapp\Apple.com\shein
+-ecommerce\.next\serv
+er\chunks\ssr\node_mo
+dules_next_920e7746._
+.js:4:5284)
+    at q (C:\Users\Lo
+kana Ngabu\Desktop\Ny
+ mapp\Apple.com\shein
+-ecommerce\.next\serv
+er\chunks\ssr\_95367a
+79._.js:1:10913)
+    at an (C:\Users\L
+okana Ngabu\Desktop\N
+y mapp\Apple.com\shei
+n-ecommerce\node_modu
+les\next\dist\compile
+d\next-server\app-pag
+e-turbo.runtime.prod.
+js:2:84360)
+    at ai (C:\Users\L
+okana Ngabu\Desktop\N
+y mapp\Apple.com\shei
+n-ecommerce\node_modu
+les\next\dist\compile
+d\next-server\app-pag
+e-turbo.runtime.prod.
+js:2:86179)
+    at al (C:\Users\L
+okana Ngabu\Desktop\N
+y mapp\Apple.com\shei
+n-ecommerce\node_modu
+les\next\dist\compile
+d\next-server\app-pag
+e-turbo.runtime.prod.
+js:2:107953)
+    at as (C:\Users\L
+okana Ngabu\Desktop\N
+y mapp\Apple.com\shei
+n-ecommerce\node_modu
+les\next\dist\compile
+d\next-server\app-pag
+e-turbo.runtime.prod.
+js:2:105368)
+    at aa (C:\Users\L
+okana Ngabu\Desktop\N
+y mapp\Apple.com\shei
+n-ecommerce\node_modu
+les\next\dist\compile
+d\next-server\app-pag
+e-turbo.runtime.prod.
+js:2:84712)
+    at ai (C:\Users\L
+okana Ngabu\Desktop\N
+y mapp\Apple.com\shei
+n-ecommerce\node_modu
+les\next\dist\compile
+d\next-server\app-pag
+e-turbo.runtime.prod.
+js:2:86228)
+    at ai (C:\Users\L
+okana Ngabu\Desktop\N
+y mapp\Apple.com\shei
+n-ecommerce\node_modu
+les\next\dist\compile
+d\next-server\app-pag
+e-turbo.runtime.prod.
+js:2:104708)
+Error occurred preren
+dering page "/catalog
+". Read more: https:/
+/nextjs.org/docs/mess
+ages/prerender-error
+Export encountered an
+ error on /catalog/pa
+ge: /catalog, exiting
+ the build.
+Ô¿» Next.js build wor
+ker exited with code:
+ 1 and signal: null

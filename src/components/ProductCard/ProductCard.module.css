@@ -1,0 +1,246 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  text-decoration: none;
+  transition: all 0.2s;
+  cursor: pointer;
+  position: relative;
+}
+
+.imageContainer {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  background-color: #f6f6f6;
+  overflow: hidden;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.hoverImage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.card:hover .hoverImage {
+  opacity: 1;
+}
+
+.badges {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  z-index: 2;
+}
+
+.discountBadge {
+  display: none;
+}
+
+.hotBadge {
+  background-color: #000;
+  color: #fff;
+  padding: 2px 6px;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  border-radius: 2px;
+}
+
+.wishlistBtn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 28px;
+  height: 28px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+  z-index: 3;
+  transition: all 0.2s ease;
+  color: #666;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.wishlistBtn:hover {
+  background: #fff;
+  color: #fa6338;
+  transform: scale(1.1);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+}
+
+.wishlistBtn:active {
+  transform: scale(0.95);
+}
+
+.wishlistActive {
+  background: #fff;
+  color: #fa6338;
+  box-shadow: 0 2px 6px rgba(250, 99, 56, 0.3);
+}
+
+.quickViewBtn {
+  position: absolute;
+  top: 8px;
+  right: 44px;
+  width: 28px;
+  height: 28px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+  z-index: 3;
+  transition: all 0.2s ease;
+  color: #666;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  pointer-events: auto;
+}
+
+.quickViewBtn:hover {
+  background: #fff;
+  color: #222;
+  transform: scale(1.1);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+}
+
+.quickViewBtn:active {
+  transform: scale(0.95);
+}
+
+.outOfStockBadge {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.6);
+  color: #222;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 600;
+  z-index: 4;
+}
+
+.content {
+  padding: 8px 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.name {
+  font-size: 12px;
+  font-weight: 400;
+  color: #666;
+  margin: 0 0 6px 0;
+  line-height: 1.4;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-decoration: none;
+}
+
+.bottomRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.priceContainer {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+}
+
+.price {
+  font-size: 28px;
+  font-weight: 900;
+  color: #222;
+}
+
+.salePrice {
+  color: #fa6338;
+}
+
+.originalPrice {
+  display: none;
+}
+
+.quickAddBtn {
+  width: 36px;
+  height: 36px;
+  background: #f5f5f5;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  z-index: 5;
+  transition: all 0.2s ease;
+  color: #222;
+  pointer-events: auto;
+}
+
+.quickAddBtn:hover {
+  background: #e5e5e5;
+  transform: scale(1.1);
+}
+
+.ratingContainer {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 4px;
+}
+
+.stars {
+  display: flex;
+  gap: 1px;
+  color: #ffb800;
+}
+
+.starIcon {
+  width: 10px;
+  height: 10px;
+}
+
+.reviewCount {
+  font-size: 10px;
+  color: #999;
+}
+
+@media (max-width: 768px) {
+  .name {
+    font-size: 11px;
+  }
+
+  .price {
+    font-size: 22px;
+  }
+}

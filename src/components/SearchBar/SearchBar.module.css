@@ -1,0 +1,87 @@
+.searchContainer {
+  position: relative;
+  width: 100%;
+}
+
+.searchForm {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  overflow: hidden;
+  height: 36px;
+}
+
+.inputWrapper {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  padding: 0 12px;
+  gap: 8px;
+}
+
+.flameIcon {
+  flex-shrink: 0;
+}
+
+.searchInput {
+  width: 100%;
+  border: none;
+  outline: none;
+  font-size: 13px;
+  color: #222;
+  background: transparent;
+}
+
+.searchInput::placeholder {
+  color: #999;
+}
+
+.searchButton {
+  width: 48px;
+  height: 100%;
+  background-color: #222;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  color: #fff;
+}
+
+.searchButton:hover {
+  background-color: #000;
+}
+
+.searchIcon {
+  width: 18px;
+  height: 18px;
+}
+
+.suggestions {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background-color: #fff;
+  border: 1px solid #eee;
+  border-top: none;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+  border-radius: 0 0 4px 4px;
+}
+
+.suggestionItem {
+  padding: 10px 15px;
+  font-size: 13px;
+  color: #444;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.suggestionItem:hover {
+  background-color: #f9f9f9;
+  color: #000;
+}

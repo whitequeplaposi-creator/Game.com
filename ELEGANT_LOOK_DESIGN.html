@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ELEGANT KVÄLLSLOOK - Design Koncept</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,700;1,6..96,400&family=Montserrat:wght@200;300;400;600&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --light-blue: #F0F7FF;
+            --deep-blue: #1A3A5F;
+            --accent-silver: #E0E0E0;
+            --soft-blue: #D1E9FF;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--light-blue);
+            font-family: 'Montserrat', sans-serif;
+            overflow-x: hidden;
+            color: var(--deep-blue);
+        }
+
+        /* Hero Section Styling */
+        .section-wrapper {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #f0f7ff 0%, #c9e4ff 100%);
+        }
+
+        /* Abstract Decorative Elements */
+        .shape {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            z-index: 1;
+            opacity: 0.6;
+        }
+
+        .shape-1 {
+            top: -10%;
+            right: -5%;
+            width: 500px;
+            height: 500px;
+            background: #BBDEFB;
+        }
+
+        .shape-2 {
+            bottom: -5%;
+            left: -5%;
+            width: 400px;
+            height: 400px;
+            background: #E3F2FD;
+        }
+
+        /* Main Glass Card */
+        .glass-container {
+            position: relative;
+            z-index: 10;
+            width: 90%;
+            max-width: 1200px;
+            height: 80vh;
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            background: rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            border-radius: 4px;
+            box-shadow: 0 40px 100px rgba(0, 0, 0, 0.08);
+            overflow: hidden;
+            animation: fadeIn 1.5s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Left Side: Content */
+        .content-side {
+            padding: 80px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+        }
+
+        .badge {
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+            color: #5D8AA8;
+            border-bottom: 1px solid #5D8AA8;
+            padding-bottom: 5px;
+            display: inline-block;
+            width: fit-content;
+        }
+
+        .title {
+            font-family: 'Bodoni Moda', serif;
+            font-size: clamp(40px, 8vw, 72px);
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            color: var(--deep-blue);
+        }
+
+        .star {
+            font-family: serif;
+            font-size: 0.7em;
+            vertical-align: top;
+            margin-left: 10px;
+            color: #A4C1E1;
+        }
+
+        .subtitle {
+            font-family: 'Bodoni Moda', serif;
+            font-style: italic;
+            font-size: 20px;
+            color: #4A6E91;
+            margin-bottom: 50px;
+            font-weight: 400;
+            opacity: 0.8;
+        }
+
+        .cta-container {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .primary-btn {
+            background-color: var(--deep-blue);
+            color: #fff;
+            padding: 20px 45px;
+            font-size: 13px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            text-decoration: none;
+            transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .primary-btn:hover {
+            background-color: #000;
+            transform: translateX(10px);
+            box-shadow: 20px 20px 0px rgba(26, 58, 95, 0.1);
+        }
+
+        /* Right Side: Visuals */
+        .visual-side {
+            position: relative;
+            background: #EAF4FF;
+            overflow: hidden;
+        }
+
+        .main-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 6s ease;
+        }
+
+        .visual-side:hover .main-image {
+            transform: scale(1.1);
+        }
+
+        .product-overlay {
+            position: absolute;
+            bottom: 30px;
+            right: 30px;
+            display: flex;
+            gap: 15px;
+        }
+
+        .mini-card {
+            width: 130px;
+            height: 180px;
+            background: #fff;
+            padding: 5px;
+            border-radius: 2px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            transform: translateY(0);
+            transition: transform 0.4s ease;
+            cursor: pointer;
+        }
+
+        .mini-card:hover {
+            transform: translateY(-15px);
+        }
+
+        .mini-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .price-label {
+            position: absolute;
+            bottom: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: white;
+            padding: 4px 12px;
+            font-size: 10px;
+            font-weight: 800;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        /* Decorative Light Flares */
+        .flare {
+            position: absolute;
+            width: 2px;
+            height: 100px;
+            background: linear-gradient(to bottom, transparent, rgba(255, 255, 255, 0.8), transparent);
+            top: 20%;
+            left: 10%;
+            animation: float 4s infinite ease-in-out;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-50px);
+            }
+        }
+
+        /* Responsiveness */
+        @media (max-width: 992px) {
+            .glass-container {
+                grid-template-columns: 1fr;
+                height: auto;
+                margin-top: 50px;
+            }
+
+            .content-side {
+                padding: 50px;
+            }
+
+            .visual-side {
+                height: 400px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="section-wrapper">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+
+        <div class="glass-container">
+            <div class="content-side">
+                <div class="flare"></div>
+                <span class="badge">Spring / Summer '26</span>
+                <h1 class="title">ELEGANT<br>KVÄLLSLOOK<span class="star">✦</span></h1>
+                <p class="subtitle">Låt din stil tala för sig själv</p>
+
+                <div class="cta-container">
+                    <a href="#" class="primary-btn">UTFORSKA &gt;</a>
+                </div>
+            </div>
+
+            <div class="visual-side">
+                <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?w=1000&h=1200&fit=crop"
+                    alt="Model in blue" class="main-image">
+
+                <div class="product-overlay">
+                    <div class="mini-card">
+                        <img src="https://images.unsplash.com/photo-1539109132332-629d63c9703f?w=300&h=400&fit=crop"
+                            alt="Dress">
+                        <div class="price-label">599 kr</div>
+                    </div>
+                    <div class="mini-card">
+                        <img src="https://images.unsplash.com/photo-1515434126000-961d90ff09db?w=300&h=400&fit=crop"
+                            alt="Accessories">
+                        <div class="price-label">249 kr</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

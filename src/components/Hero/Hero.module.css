@@ -1,0 +1,171 @@
+.hero {
+  width: 100%;
+  background-color: #fff;
+}
+
+.heroContainer {
+  position: relative;
+  width: 100%;
+  height: 350px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.heroBackground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.heroImage {
+  object-fit: cover;
+  object-position: center;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.2) 50%, transparent 100%);
+  z-index: 2;
+}
+
+.heroContent {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  height: 100%;
+  text-align: left;
+  padding-left: 60px;
+}
+
+.textContainer {
+  color: white;
+  max-width: 500px;
+}
+
+.campaignTitle {
+  font-size: 52px;
+  font-weight: 800;
+  margin: 0 0 12px 0;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
+  letter-spacing: 1px;
+  line-height: 1.1;
+}
+
+.campaignSubtitle {
+  font-size: 18px;
+  font-weight: 400;
+  margin: 0 0 16px 0;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+  line-height: 1.4;
+}
+
+.discountInfo {
+  font-size: 28px;
+  font-weight: 700;
+  margin: 0 0 28px 0;
+  color: #ffeb3b;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+}
+
+.ctaButton {
+  display: inline-block;
+  background-color: #ff6b6b;
+  color: white;
+  padding: 16px 52px;
+  font-size: 15px;
+  font-weight: 700;
+  text-decoration: none;
+  border-radius: 2px;
+  transition: all 0.3s;
+  cursor: pointer;
+  border: none;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.ctaButton:hover {
+  background-color: #ff5252;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(255, 107, 107, 0.4);
+}
+
+.ctaButton:active {
+  transform: translateY(0);
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .heroContainer {
+    height: 380px;
+  }
+
+  .heroContent {
+    padding-left: 40px;
+  }
+
+  .campaignTitle {
+    font-size: 44px;
+  }
+
+  .campaignSubtitle {
+    font-size: 16px;
+  }
+
+  .discountInfo {
+    font-size: 24px;
+  }
+
+  .ctaButton {
+    padding: 14px 44px;
+    font-size: 14px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+  .heroContainer {
+    height: 300px;
+  }
+
+  .heroContent {
+    padding-left: 20px;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .campaignTitle {
+    font-size: 32px;
+    margin-bottom: 8px;
+  }
+
+  .campaignSubtitle {
+    font-size: 14px;
+    margin-bottom: 12px;
+  }
+
+  .discountInfo {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+
+  .ctaButton {
+    padding: 12px 36px;
+    font-size: 13px;
+  }
+
+  .textContainer {
+    max-width: 100%;
+  }
+}

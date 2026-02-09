@@ -1,0 +1,251 @@
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.header {
+  margin-bottom: 32px;
+}
+
+.backLink {
+  display: inline-block;
+  color: #000;
+  text-decoration: none;
+  font-size: 14px;
+  margin-bottom: 16px;
+}
+
+.backLink:hover {
+  text-decoration: underline;
+}
+
+.title {
+  font-size: 32px;
+  font-weight: 700;
+  color: #222;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.orderInfo {
+  background: #f9f9f9;
+  border: 1px solid #e5e5e5;
+  border-radius: 8px;
+  padding: 24px;
+}
+
+.infoRow {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 0;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.infoRow:last-child {
+  border-bottom: none;
+}
+
+.label {
+  font-size: 14px;
+  color: #666;
+}
+
+.value {
+  font-size: 14px;
+  font-weight: 600;
+  color: #222;
+}
+
+.status {
+  padding: 4px 12px;
+  border-radius: 4px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.statusProcessing {
+  background: #fff3cd;
+  color: #856404;
+}
+
+.statusShipped {
+  background: #d1ecf1;
+  color: #0c5460;
+}
+
+.statusDelivered {
+  background: #d4edda;
+  color: #155724;
+}
+
+.statusCancelled {
+  background: #f8d7da;
+  color: #721c24;
+}
+
+.section {
+  background: #fff;
+  border: 1px solid #e5e5e5;
+  border-radius: 8px;
+  padding: 24px;
+}
+
+.sectionTitle {
+  font-size: 18px;
+  font-weight: 600;
+  color: #222;
+  margin-bottom: 16px;
+}
+
+.emptyText {
+  color: #666;
+  font-size: 14px;
+}
+
+.productsList {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.productItem {
+  display: flex;
+  gap: 16px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.productItem:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.productImage {
+  width: 80px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.productInfo {
+  flex: 1;
+}
+
+.productName {
+  font-size: 14px;
+  font-weight: 500;
+  color: #222;
+  margin-bottom: 6px;
+}
+
+.productVariant {
+  font-size: 13px;
+  color: #666;
+  margin-bottom: 4px;
+}
+
+.productQuantity {
+  font-size: 13px;
+  color: #666;
+}
+
+.productPrice {
+  font-size: 16px;
+  font-weight: 600;
+  color: #222;
+}
+
+.addressBox {
+  background: #f9f9f9;
+  padding: 16px;
+  border-radius: 6px;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.addressName {
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.addressContact {
+  color: #666;
+  margin-top: 8px;
+}
+
+.detailText {
+  font-size: 14px;
+  color: #666;
+  margin-top: 6px;
+}
+
+.summaryBox {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.summaryRow {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  color: #222;
+}
+
+.summaryRow.discount {
+  color: #e74c3c;
+}
+
+.summaryRow.total {
+  font-size: 18px;
+  font-weight: 700;
+  padding-top: 12px;
+  border-top: 2px solid #222;
+  margin-top: 8px;
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+  margin-top: 16px;
+}
+
+.button {
+  padding: 14px 32px;
+  background: #000;
+  color: #fff;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 4px;
+  transition: background 0.2s;
+  display: inline-block;
+}
+
+.button:hover {
+  background: #333;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 24px 16px;
+  }
+
+  .title {
+    font-size: 26px;
+  }
+
+  .productImage {
+    width: 60px;
+    height: 75px;
+  }
+
+  .section {
+    padding: 20px;
+  }
+}

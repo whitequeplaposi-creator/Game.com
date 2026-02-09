@@ -1,0 +1,216 @@
+.container {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.successIcon {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 24px;
+  animation: scaleIn 0.5s ease-out;
+}
+
+@keyframes scaleIn {
+  from {
+    transform: scale(0);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.title {
+  font-size: 32px;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 12px;
+}
+
+.subtitle {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 32px;
+}
+
+.orderInfo {
+  background: #f9f9f9;
+  border: 1px solid #e5e5e5;
+  border-radius: 8px;
+  padding: 24px;
+  margin-bottom: 24px;
+  text-align: left;
+}
+
+.infoRow {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 0;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.infoRow:last-child {
+  border-bottom: none;
+}
+
+.label {
+  font-size: 14px;
+  color: #666;
+}
+
+.value {
+  font-size: 14px;
+  font-weight: 600;
+  color: #222;
+}
+
+.detailsBox {
+  background: #fff;
+  border: 1px solid #e5e5e5;
+  border-radius: 8px;
+  padding: 24px;
+  margin-bottom: 24px;
+  text-align: left;
+}
+
+.detailsTitle {
+  font-size: 18px;
+  font-weight: 600;
+  color: #222;
+  margin-bottom: 16px;
+}
+
+.stepsList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.stepsList li {
+  font-size: 14px;
+  color: #666;
+  padding: 8px 0;
+  padding-left: 24px;
+  position: relative;
+}
+
+.stepsList li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: #4CAF50;
+  font-weight: 700;
+}
+
+.addressBox {
+  background: #f9f9f9;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 32px;
+  text-align: left;
+}
+
+.addressTitle {
+  font-size: 16px;
+  font-weight: 600;
+  color: #222;
+  margin-bottom: 12px;
+}
+
+.addressName {
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.addressBox p {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.6;
+}
+
+.actions {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.primaryButton {
+  flex: 1;
+  padding: 16px 32px;
+  background: #000;
+  color: #fff;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 4px;
+  transition: all 0.2s;
+  display: inline-block;
+  text-align: center;
+}
+
+.primaryButton:hover {
+  background: #333;
+}
+
+.secondaryButton {
+  flex: 1;
+  padding: 16px 32px;
+  background: #fff;
+  color: #222;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  border: 1px solid #222;
+  border-radius: 4px;
+  transition: all 0.2s;
+  display: inline-block;
+  text-align: center;
+}
+
+.secondaryButton:hover {
+  background: #f5f5f5;
+}
+
+.supportBox {
+  padding-top: 24px;
+  border-top: 1px solid #e5e5e5;
+}
+
+.supportText {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 12px;
+}
+
+.supportLink {
+  color: #000;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+.supportLink:hover {
+  color: #666;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 24px 16px;
+  }
+
+  .title {
+    font-size: 26px;
+  }
+
+  .actions {
+    flex-direction: column;
+  }
+
+  .primaryButton,
+  .secondaryButton {
+    width: 100%;
+  }
+}

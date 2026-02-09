@@ -1,0 +1,193 @@
+.container {
+  background: #fff;
+  border: 1px solid #e5e5e5;
+  border-radius: 8px;
+  padding: 24px;
+  position: sticky;
+  top: 20px;
+}
+
+.title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #222;
+  margin-bottom: 16px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.itemsCount {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.priceRows {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  color: #222;
+}
+
+.row.discount {
+  color: #e74c3c;
+  font-weight: 500;
+}
+
+.total {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 16px;
+  margin-top: 16px;
+  border-top: 2px solid #222;
+}
+
+.totalLabel {
+  font-size: 18px;
+  font-weight: 700;
+  color: #222;
+}
+
+.totalAmount {
+  font-size: 20px;
+  font-weight: 700;
+  color: #222;
+}
+
+.discountSection {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid #e5e5e5;
+}
+
+.discountForm {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.discountInput {
+  flex: 1;
+  padding: 10px 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+
+.discountInput:focus {
+  outline: none;
+  border-color: #222;
+}
+
+.applyButton {
+  padding: 10px 20px;
+  background: #000;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.applyButton:hover {
+  background: #333;
+}
+
+.removeButton {
+  width: 100%;
+  padding: 8px;
+  background: none;
+  border: none;
+  color: #e74c3c;
+  font-size: 13px;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.removeButton:hover {
+  color: #c0392b;
+}
+
+.bonusSection {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid #e5e5e5;
+}
+
+.bonusLabel {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  color: #222;
+  cursor: pointer;
+  margin-bottom: 8px;
+}
+
+.checkbox {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+}
+
+.bonusInfo {
+  font-size: 12px;
+  color: #666;
+  margin-left: 28px;
+}
+
+.benefits {
+  margin-top: 24px;
+  padding-top: 24px;
+  border-top: 1px solid #e5e5e5;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.benefit {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  color: #666;
+}
+
+.benefit svg {
+  flex-shrink: 0;
+}
+
+@media (max-width: 1024px) {
+  .container {
+    position: static;
+    margin-bottom: 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 20px;
+  }
+
+  .title {
+    font-size: 18px;
+  }
+
+  .totalLabel {
+    font-size: 16px;
+  }
+
+  .totalAmount {
+    font-size: 18px;
+  }
+}

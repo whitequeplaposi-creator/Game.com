@@ -1,0 +1,160 @@
+.progressContainer {
+  width: 100%;
+  padding: 30px 20px;
+  background: #fff;
+  border-bottom: 1px solid #eee;
+}
+
+.progressBar {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.stepWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  position: relative;
+}
+
+.stepCircle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 2;
+}
+
+.stepCircle.upcoming {
+  background: #f5f5f5;
+  border: 2px solid #ddd;
+  color: #999;
+}
+
+.stepCircle.active {
+  background: #000;
+  border: 2px solid #000;
+  color: #fff;
+  box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.1);
+}
+
+.stepCircle.completed {
+  background: #4caf50;
+  border: 2px solid #4caf50;
+  color: #fff;
+}
+
+.checkIcon {
+  width: 20px;
+  height: 20px;
+}
+
+.stepNumber {
+  font-size: 16px;
+}
+
+.stepLabel {
+  margin-top: 12px;
+  text-align: center;
+}
+
+.labelText {
+  font-size: 13px;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.labelText.upcoming {
+  color: #999;
+}
+
+.labelText.active {
+  color: #000;
+  font-weight: 600;
+}
+
+.labelText.completed {
+  color: #4caf50;
+}
+
+.stepLine {
+  flex: 1;
+  height: 2px;
+  background: #ddd;
+  margin: 0 10px;
+  align-self: flex-start;
+  margin-top: 19px;
+  transition: background 0.3s ease;
+}
+
+.stepLine.completed {
+  background: #4caf50;
+}
+
+/* Mobile version */
+.progressMobile {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .progressBar {
+    display: none;
+  }
+
+  .progressMobile {
+    display: block;
+  }
+
+  .mobileText {
+    text-align: center;
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 10px;
+  }
+
+  .mobileBar {
+    width: 100%;
+    height: 6px;
+    background: #f5f5f5;
+    border-radius: 3px;
+    overflow: hidden;
+    margin-bottom: 10px;
+  }
+
+  .mobileProgress {
+    height: 100%;
+    background: #000;
+    transition: width 0.3s ease;
+  }
+
+  .mobileLabel {
+    text-align: center;
+    font-size: 16px;
+    font-weight: 600;
+    color: #000;
+  }
+
+  .progressContainer {
+    padding: 20px 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .mobileText {
+    font-size: 12px;
+  }
+
+  .mobileLabel {
+    font-size: 14px;
+  }
+}

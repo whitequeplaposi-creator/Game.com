@@ -1,0 +1,312 @@
+.container {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 600;
+  color: #222;
+  margin-bottom: 8px;
+}
+
+.subtitle {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 30px;
+}
+
+.paymentOptions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 30px;
+}
+
+.optionCard {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 16px 20px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: #fff;
+}
+
+.optionCard:hover {
+  border-color: #999;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.optionCard.selected {
+  border-color: #000;
+  background: #fafafa;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+}
+
+.optionCard:focus {
+  outline: none;
+  border-color: #000;
+  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.1);
+}
+
+.radioButton {
+  flex-shrink: 0;
+}
+
+.radioOuter {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #ddd;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.optionCard.selected .radioOuter {
+  border-color: #000;
+}
+
+.radioInner {
+  width: 10px;
+  height: 10px;
+  background: #000;
+  border-radius: 50%;
+  animation: scaleIn 0.2s ease;
+}
+
+@keyframes scaleIn {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+.optionIcon {
+  font-size: 32px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.optionContent {
+  flex: 1;
+}
+
+.optionName {
+  font-size: 16px;
+  font-weight: 600;
+  color: #222;
+  margin: 0 0 4px 0;
+}
+
+.optionDescription {
+  font-size: 13px;
+  color: #666;
+  margin: 0;
+}
+
+.paymentForm {
+  margin: 30px 0;
+  padding: 25px;
+  background: #f9f9f9;
+  border-radius: 8px;
+  border: 1px solid #eee;
+}
+
+.paymentInfo {
+  margin: 20px 0;
+  padding: 20px;
+  background: #e3f2fd;
+  border-radius: 8px;
+  border-left: 4px solid #2196f3;
+}
+
+.paymentInfo p {
+  margin: 0;
+  font-size: 14px;
+  color: #1565c0;
+  line-height: 1.6;
+}
+
+.giftCardForm {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #222;
+  margin-bottom: 8px;
+}
+
+.input {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.input:focus {
+  outline: none;
+  border-color: #000;
+  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.05);
+}
+
+.validateButton {
+  padding: 12px 24px;
+  background: #000;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  align-self: flex-start;
+}
+
+.validateButton:hover {
+  background: #333;
+}
+
+.securityInfo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 15px 20px;
+  background: #f5f5f5;
+  border-radius: 6px;
+  margin: 20px 0;
+}
+
+.lockIcon {
+  width: 20px;
+  height: 20px;
+  color: #4caf50;
+  flex-shrink: 0;
+}
+
+.securityInfo span {
+  font-size: 13px;
+  color: #666;
+  font-weight: 500;
+}
+
+.actions {
+  display: flex;
+  gap: 15px;
+  justify-content: flex-end;
+  padding-top: 20px;
+  border-top: 1px solid #eee;
+  margin-top: 30px;
+}
+
+.continueButton {
+  padding: 14px 32px;
+  background: #000;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-width: 200px;
+}
+
+.continueButton:hover:not(:disabled) {
+  background: #333;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.continueButton:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.backButton {
+  padding: 14px 32px;
+  background: #fff;
+  color: #222;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.backButton:hover {
+  background: #f5f5f5;
+  border-color: #000;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .container {
+    padding: 15px;
+  }
+
+  .title {
+    font-size: 20px;
+  }
+
+  .optionCard {
+    padding: 14px 16px;
+  }
+
+  .optionIcon {
+    font-size: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .paymentForm {
+    padding: 20px;
+  }
+
+  .actions {
+    flex-direction: column-reverse;
+  }
+
+  .continueButton,
+  .backButton {
+    width: 100%;
+    min-width: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .optionName {
+    font-size: 15px;
+  }
+
+  .optionDescription {
+    font-size: 12px;
+  }
+
+  .paymentInfo {
+    padding: 15px;
+  }
+
+  .paymentInfo p {
+    font-size: 13px;
+  }
+}

@@ -1,0 +1,306 @@
+.header {
+  width: 100%;
+  background-color: #fff;
+  z-index: 1000;
+  position: relative;
+}
+
+.scrolled {
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Top Bar */
+.topBar {
+  background-color: #fff;
+  border-bottom: 1px solid #eee;
+  padding: 6px 0;
+}
+
+.topBarLeft {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.topBarRight {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.topBarItem {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  color: #222;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.topBarItem:hover {
+  text-decoration: underline;
+}
+
+.divider {
+  width: 1px;
+  height: 12px;
+  background-color: #ddd;
+}
+
+/* Main Header */
+.mainHeader {
+  padding: 15px 0;
+  background-color: #000;
+  color: #fff;
+}
+
+.logo {
+  font-size: 28px;
+  font-weight: 900;
+  letter-spacing: 2px;
+  color: #fff;
+  text-decoration: none;
+  font-family: 'Inter', sans-serif;
+}
+
+.searchContainer {
+  flex: 1;
+  max-width: 600px;
+  margin: 0 40px;
+}
+
+.headerIcons {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.icon {
+  color: #fff;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  position: relative;
+  transition: opacity 0.2s;
+  cursor: pointer;
+}
+
+.icon:hover {
+  opacity: 0.8;
+}
+
+.svgIcon {
+  width: 22px;
+  height: 22px;
+}
+
+.cartIconWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.cartCount {
+  position: absolute;
+  top: -5px;
+  right: -8px;
+  background-color: #fff;
+  color: #000;
+  font-size: 10px;
+  font-weight: 700;
+  min-width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Navigation Bar */
+.navBar {
+  border-bottom: 1px solid #eee;
+  overflow: hidden;
+}
+
+.navLinks {
+  display: flex;
+  overflow-x: auto;
+  white-space: nowrap;
+  gap: 20px;
+  padding: 10px 0;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.navLinks::-webkit-scrollbar {
+  display: none;
+}
+
+.categoryLink {
+  text-decoration: none;
+  color: #222;
+  font-size: 13px;
+  font-weight: 500;
+  transition: color 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.categoryLink:hover {
+  color: #666;
+}
+
+.downArrow {
+  font-size: 10px;
+}
+
+/* Discount Banner */
+.discountBanner {
+  position: fixed;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%) rotate(180deg);
+  background-color: #000;
+  color: #fff;
+  padding: 15px 6px;
+  writing-mode: vertical-rl;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  z-index: 1001;
+  border-radius: 4px 0 0 4px;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Mobile */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.hamburger span {
+  width: 24px;
+  height: 2px;
+  background-color: #fff;
+}
+
+@media (max-width: 1024px) {
+  .searchContainer {
+    margin: 0 20px;
+  }
+
+  .discountBanner {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .searchContainer {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .headerIcons {
+    gap: 15px;
+  }
+}
+
+/* User Menu */
+.userMenuWrapper {
+  position: relative;
+}
+
+.userMenu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin-top: 10px;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  min-width: 240px;
+  max-height: 500px;
+  overflow-y: auto;
+  z-index: 1000;
+  animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.userMenuHeader {
+  padding: 16px;
+  border-bottom: 1px solid #eee;
+}
+
+.userName {
+  font-size: 14px;
+  font-weight: 600;
+  color: #222;
+  margin: 0 0 4px 0;
+}
+
+.userEmail {
+  font-size: 12px;
+  color: #666;
+  margin: 0;
+  word-break: break-all;
+}
+
+.userMenuItem {
+  display: block;
+  width: 100%;
+  padding: 12px 16px;
+  text-align: left;
+  font-size: 14px;
+  color: #222;
+  text-decoration: none;
+  border: none;
+  background: none;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.userMenuItem:hover {
+  background-color: #f5f5f5;
+}
+
+.menuDivider {
+  height: 1px;
+  background-color: #e0e0e0;
+  margin: 8px 0;
+}
+
+.userMenuItem:last-child {
+  color: #222;
+}

@@ -1,0 +1,261 @@
+.page {
+    min-height: 100vh;
+}
+
+/* Container */
+.container {
+    max-width: var(--container-max);
+    margin: 0 auto;
+    padding: 0 var(--container-padding);
+}
+
+/* Sections */
+.section {
+    padding: 50px 0;
+}
+
+.sectionHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.sectionTitle {
+    font-size: 22px;
+    font-weight: 700;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.flashIcon {
+    font-size: 24px;
+}
+
+.countdown {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--sale-red);
+    margin-left: 16px;
+    padding: 4px 12px;
+    background: rgba(255, 0, 0, 0.1);
+    border-radius: 20px;
+}
+
+.viewAllLink {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-secondary);
+    transition: color var(--transition-fast);
+}
+
+.viewAllLink:hover {
+    color: var(--accent-pink);
+}
+
+/* Category Icons (Shein style) */
+.categoryIconsSection {
+    padding: 24px 0;
+    background: var(--bg-primary);
+}
+
+.categoryIconsGrid {
+    display: flex;
+    overflow-x: auto;
+    gap: 16px;
+    padding: 4px var(--container-padding);
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.categoryIconsGrid::-webkit-scrollbar {
+    display: none;
+}
+
+.categoryIconCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    min-width: 70px;
+    flex-shrink: 0;
+    transition: transform var(--transition-fast);
+}
+
+.categoryIconCard:hover {
+    transform: translateY(-2px);
+}
+
+.categoryIconImage {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: var(--bg-secondary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border: none;
+}
+
+.categoryIconImage img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.categoryIconName {
+    font-size: 12px;
+    font-weight: 400;
+    color: var(--text-primary);
+    text-align: center;
+    white-space: nowrap;
+    margin-top: 4px;
+}
+
+@media (min-width: 992px) {
+    .categoryIconsGrid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+        gap: 20px;
+        justify-content: center;
+        padding: 0;
+    }
+}
+
+.categoryEmoji {
+    font-size: 36px;
+}
+
+.categoryName {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-primary);
+    text-align: center;
+}
+
+/* Product Grid */
+.productGrid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 16px;
+}
+
+@media (max-width: 1200px) {
+    .productGrid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (max-width: 992px) {
+    .productGrid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .productGrid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+}
+
+/* Flash Sale */
+.flashSale {
+    background: var(--bg-primary);
+    padding: 40px 0;
+    border-top: 1px solid var(--border-medium);
+    border-bottom: 1px solid var(--border-medium);
+}
+
+/* CTA Banner */
+.ctaBanner {
+    background: var(--primary-black);
+    padding: 80px 0;
+    margin-top: 40px;
+}
+
+.ctaContent {
+    text-align: center;
+    color: var(--primary-white);
+}
+
+.ctaTitle {
+    font-size: 32px;
+    font-weight: 700;
+    margin: 0 0 12px;
+}
+
+.ctaText {
+    font-size: 16px;
+    opacity: 0.9;
+    margin: 0 0 32px;
+}
+
+.appButtons {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.appButton {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 24px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    color: var(--primary-white);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.appButton:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+.appIcon {
+    font-size: 28px;
+}
+
+.appButton div {
+    text-align: left;
+}
+
+.appButton small {
+    display: block;
+    font-size: 10px;
+    opacity: 0.8;
+}
+
+.appButton strong {
+    font-size: 14px;
+}
+
+/* Responsive section title */
+@media (max-width: 768px) {
+    .sectionTitle {
+        font-size: 18px;
+    }
+
+    .countdown {
+        display: none;
+    }
+
+    .section {
+        padding: 30px 0;
+    }
+
+    .ctaTitle {
+        font-size: 24px;
+    }
+
+    .ctaText {
+        font-size: 14px;
+    }
+}

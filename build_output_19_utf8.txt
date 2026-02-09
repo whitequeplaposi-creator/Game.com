@@ -1,0 +1,61 @@
+﻿
+> shein-ecommerce@0.1.0 build
+> next build
+
+Ôû▓ Next.js 16.1.6 (Turbopack)
+- Environments: .env.local
+
+  Creating an optimized production build ...
+Ô£ô Compiled successfully in 7.4s
+  Running TypeScript ...
+node.exe : Failed to 
+compile.
+At line:1 char:1
++ & "C:\Program Files
+\nodejs/node.exe" "C:
+\Program Files\nodejs
+/node_mo ...
++ ~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~
+    + CategoryInfo   
+           : NotSpe  
+  cified: (Failed    
+ to compile.:Stri    
+ng) [], RemoteEx    c
+eption
+    + FullyQualified 
+   ErrorId : Native  
+  CommandError
+ 
+
+./src/utils/pbt-utils
+.ts:1:21
+Type error: Cannot fi
+nd module 'fast-check
+' or its correspondin
+g type declarations.
+
+[0m[31m[1m>[22m[
+39m[90m 1 |[39m [3
+6mimport[39m [33m*
+[39m [36mas[39m fc 
+[36mfrom[39m [32m'
+fast-check'[39m[33m
+;[39m
+ [90m   |[39m      
+               [31m
+[1m^[22m[39m
+ [90m 2 |[39m
+ [90m 3 |[39m [90m
+// Arbitraries for co
+mmon types[39m
+ [90m 4 |[39m [36m
+export[39m [36mcons
+t[39m arbitraryProdu
+ct [33m=[39m () [3
+3m=>[39m[0m
+Next.js build worker 
+exited with code: 1 a
+nd signal: null

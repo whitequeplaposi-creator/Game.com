@@ -1,0 +1,78 @@
+﻿
+> shein-ecommerce@0.1.0 build
+> next build
+
+Ôû▓ Next.js 16.1.6 (Turbopack)
+- Environments: .env.local
+
+  Creating an optimized production build ...
+Ô£ô Compiled successfully in 8.1s
+  Running TypeScript ...
+node.exe : Failed to 
+compile.
+At line:1 char:1
++ & "C:\Program Files
+\nodejs/node.exe" "C:
+\Program Files\nodejs
+/node_mo ...
++ ~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~
+    + CategoryInfo   
+           : NotSpe  
+  cified: (Failed    
+ to compile.:Stri    
+ng) [], RemoteEx    c
+eption
+    + FullyQualified 
+   ErrorId : Native  
+  CommandError
+ 
+
+./src/utils/test-util
+s.tsx:2:39
+Type error: Cannot fi
+nd module '@testing-l
+ibrary/react' or its 
+corresponding type de
+clarations.
+
+[0m [90m 1 |[39m 
+[36mimport[39m [33m
+React[39m[33m,[39m
+ { [33mReactElement
+[39m } [36mfrom[39m
+ [32m'react'[39m[3
+3m;[39m
+[31m[1m>[22m[39m
+[90m 2 |[39m [36mim
+port[39m { render[3
+3m,[39m [33mRenderO
+ptions[39m } [36mfr
+om[39m [32m'@testin
+g-library/react'[39m
+[33m;[39m
+ [90m   |[39m      
+                     
+            [31m[1m
+^[22m[39m
+ [90m 3 |[39m
+ [90m 4 |[39m [36m
+const[39m [33mAllTh
+eProviders[39m [33m
+=[39m ({ children }
+[33m:[39m { children
+[33m:[39m [33mReac
+t[39m[33m.[39m[33
+mReactNode[39m }) [
+33m=>[39m {
+ [90m 5 |[39m   [3
+6mreturn[39m [33m<
+[39m[33m>[39m{child
+ren}[33m<[39m[33m/
+[39m[33m>[39m[33m
+;[39m[0m
+Next.js build worker 
+exited with code: 1 a
+nd signal: null

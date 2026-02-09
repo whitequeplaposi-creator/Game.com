@@ -1,0 +1,21 @@
+import { MetadataRoute } from 'next';
+
+export default function robots(): MetadataRoute.Robots {
+  const baseUrl = process.env.NEXT_PUBLIC_API_URL?.replace('/api', '') || 'http://localhost:3000';
+  
+  return {
+    rules: [
+      {
+        userAgent: '*',
+        allow: '/',
+        disallow: ['/api/', '/account/', '/admin/'],
+      },
+      {
+        userAgent: 'Googlebot',
+        allow: '/',
+        disallow: ['/api/', '/account/', '/admin/'],
+      },
+    ],
+    sitemap: `${baseUrl}/sitemap.xml`,
+  };
+}

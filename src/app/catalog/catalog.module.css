@@ -1,0 +1,52 @@
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.title {
+  font-size: 32px;
+  font-weight: 700;
+  color: #333;
+  margin: 0 0 40px 0;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 40px;
+}
+
+.sidebar {
+  height: fit-content;
+  position: sticky;
+  top: 100px;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+@media (max-width: 1024px) {
+  .content {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .sidebar {
+    position: static;
+  }
+}
+
+@media (max-width: 767px) {
+  .container {
+    padding: 20px 12px;
+  }
+
+  .title {
+    font-size: 24px;
+    margin-bottom: 24px;
+  }
+}

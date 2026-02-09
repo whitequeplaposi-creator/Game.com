@@ -1,0 +1,325 @@
+.heroSection {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.carouselContainer {
+  position: relative;
+  width: 100%;
+  height: 600px;
+  overflow: hidden;
+}
+
+.carouselTrack {
+  display: flex;
+  height: 100%;
+  transition: transform 0.6s ease-in-out;
+}
+
+.slide {
+  min-width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.imageWrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.backgroundImage {
+  object-fit: cover;
+  object-position: center;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 0, 0, 0.4) 0%,
+    rgba(0, 0, 0, 0.2) 50%,
+    rgba(0, 0, 0, 0.1) 100%
+  );
+  z-index: 2;
+}
+
+.contentWrapper {
+  position: relative;
+  z-index: 3;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 2rem;
+}
+
+.content {
+  max-width: 700px;
+  text-align: center;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.title {
+  font-size: 4rem;
+  font-weight: 700;
+  margin: 0 0 1rem 0;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  color: #ffffff;
+}
+
+.subtitle {
+  font-size: 1.75rem;
+  font-weight: 500;
+  margin: 0 0 1.5rem 0;
+  letter-spacing: 0.01em;
+  color: #ffffff;
+  opacity: 0.95;
+}
+
+.description {
+  font-size: 1.125rem;
+  line-height: 1.6;
+  margin: 0 0 2.5rem 0;
+  color: #ffffff;
+  opacity: 0.9;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.ctaButton {
+  display: inline-block;
+  padding: 1rem 3rem;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  background-color: #ffffff;
+  color: #000000;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.ctaButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.ctaButton:active {
+  transform: translateY(0);
+}
+
+.navButton {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 4;
+  background-color: rgba(255, 255, 255, 0.9);
+  border: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  font-size: 2rem;
+  color: #000000;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.navButton:hover {
+  background-color: rgba(255, 255, 255, 1);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.prevButton {
+  left: 2rem;
+}
+
+.nextButton {
+  right: 2rem;
+}
+
+.navigation {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 4;
+  display: flex;
+  gap: 0.75rem;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.5);
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 0;
+}
+
+.dot:hover {
+  background-color: rgba(255, 255, 255, 0.7);
+  transform: scale(1.2);
+}
+
+.activeDot {
+  background-color: rgba(255, 255, 255, 1);
+  width: 32px;
+  border-radius: 6px;
+}
+
+/* Responsiv design */
+@media (max-width: 1024px) {
+  .carouselContainer {
+    height: 500px;
+  }
+
+  .title {
+    font-size: 3rem;
+  }
+
+  .subtitle {
+    font-size: 1.5rem;
+  }
+
+  .description {
+    font-size: 1rem;
+  }
+
+  .navButton {
+    width: 45px;
+    height: 45px;
+    font-size: 1.75rem;
+  }
+
+  .prevButton {
+    left: 1.5rem;
+  }
+
+  .nextButton {
+    right: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .carouselContainer {
+    height: 450px;
+  }
+
+  .contentWrapper {
+    padding: 0 1.5rem;
+  }
+
+  .title {
+    font-size: 2.5rem;
+  }
+
+  .subtitle {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+  }
+
+  .description {
+    font-size: 0.95rem;
+    margin-bottom: 2rem;
+  }
+
+  .ctaButton {
+    padding: 0.875rem 2.5rem;
+    font-size: 0.9rem;
+  }
+
+  .navButton {
+    width: 40px;
+    height: 40px;
+    font-size: 1.5rem;
+  }
+
+  .prevButton {
+    left: 1rem;
+  }
+
+  .nextButton {
+    right: 1rem;
+  }
+
+  .navigation {
+    bottom: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .carouselContainer {
+    height: 400px;
+  }
+
+  .contentWrapper {
+    padding: 0 1rem;
+  }
+
+  .title {
+    font-size: 2rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .subtitle {
+    font-size: 1.125rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .description {
+    font-size: 0.875rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .ctaButton {
+    padding: 0.75rem 2rem;
+    font-size: 0.85rem;
+  }
+
+  .navButton {
+    width: 35px;
+    height: 35px;
+    font-size: 1.25rem;
+  }
+
+  .prevButton {
+    left: 0.5rem;
+  }
+
+  .nextButton {
+    right: 0.5rem;
+  }
+
+  .dot {
+    width: 10px;
+    height: 10px;
+  }
+
+  .activeDot {
+    width: 28px;
+  }
+
+  .navigation {
+    gap: 0.5rem;
+    bottom: 1rem;
+  }
+}

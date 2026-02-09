@@ -1,0 +1,21 @@
+.stickyRibbon {
+    position: fixed;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #222;
+    color: #fff;
+    z-index: 10000;
+    cursor: pointer;
+    box-shadow: -2px 0 8px rgba(0, 0, 0, 0.2);
+}
+
+.ribbonContent {
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    padding: 16px 8px;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}

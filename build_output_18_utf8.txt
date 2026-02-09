@@ -1,0 +1,109 @@
+﻿
+> shein-ecommerce@0.1.0 build
+> next build
+
+Ôû▓ Next.js 16.1.6 (Turbopack)
+- Environments: .env.local
+
+  Creating an optimized production build ...
+Ô£ô Compiled successfully in 4.2s
+  Running TypeScript ...
+node.exe : Failed to 
+compile.
+At line:1 char:1
++ & "C:\Program Files
+\nodejs/node.exe" "C:
+\Program Files\nodejs
+/node_mo ...
++ ~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~
+    + CategoryInfo   
+           : NotSpe  
+  cified: (Failed    
+ to compile.:Stri    
+ng) [], RemoteEx    c
+eption
+    + FullyQualified 
+   ErrorId : Native  
+  CommandError
+ 
+
+./src/data/index.ts:4
+76:36
+Type error: Object li
+teral may only specif
+y known properties, a
+nd 'currency' does no
+t exist in type 'Coun
+try'.
+
+[0m [90m 474 |[39m
+ [90m// European cou
+ntries[39m
+ [90m 475 |[39m [3
+6mexport[39m [36mco
+nst[39m countries[3
+3m:[39m [33mCountry
+[39m[] [33m=[39m [
+[31m[1m>[22m[39m
+[90m 476 |[39m     {
+ code[33m:[39m [32
+m'SE'[39m[33m,[39m
+ name[33m:[39m [32
+m'Sverige'[39m[33m,
+[39m currency[33m:
+[39m [32m'SEK'[39m
+[33m,[39m currencySy
+mbol[33m:[39m [32m
+'kr'[39m[33m,[39m 
+flag[33m:[39m [32m
+'­ƒç©­ƒç¬'[39m }[33
+m,[39m
+ [90m     |[39m    
+                     
+           [31m[1m^
+[22m[39m
+ [90m 477 |[39m    
+ { code[33m:[39m [
+32m'DE'[39m[33m,[3
+9m name[33m:[39m [
+32m'Deutschland'[39m
+[33m,[39m currency
+[33m:[39m [32m'EUR'
+[39m[33m,[39m curr
+encySymbol[33m:[39m
+ [32m'Ôé¼'[39m[33m
+,[39m flag[33m:[39
+m [32m'­ƒç®­ƒç¬'[39
+m }[33m,[39m
+ [90m 478 |[39m    
+ { code[33m:[39m [
+32m'FR'[39m[33m,[3
+9m name[33m:[39m [
+32m'France'[39m[33m
+,[39m currency[33m:
+[39m [32m'EUR'[39m
+[33m,[39m currencyS
+ymbol[33m:[39m [32
+m'Ôé¼'[39m[33m,[39
+m flag[33m:[39m [3
+2m'­ƒç½­ƒçÀ'[39m }[
+33m,[39m
+ [90m 479 |[39m    
+ { code[33m:[39m [
+32m'GB'[39m[33m,[3
+9m name[33m:[39m [
+32m'United Kingdom'[
+39m[33m,[39m curren
+cy[33m:[39m [32m'G
+BP'[39m[33m,[39m c
+urrencySymbol[33m:[
+39m [32m'┬ú'[39m[3
+3m,[39m flag[33m:[
+39m [32m'­ƒç¼­ƒçº'[
+39m }[33m,[39m[0m
+Next.js build worker 
+exited with code: 1 a
+nd signal: null
